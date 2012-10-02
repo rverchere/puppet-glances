@@ -3,7 +3,8 @@
 ## Description
 
 Provides package Glances python tool.
-See http://nicolargo.github.com/glances/ for mire information.
+
+See http://nicolargo.github.com/glances/ for more information.
 
 ## Usage
 
