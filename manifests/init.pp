@@ -28,7 +28,7 @@ class glances {
 
   case $operatingsystem {
 
-  debian, ubuntu: {
+  'Debian', 'Ubuntu': {
       package { ['python-pip', 'build-essential', 'python-dev']:
         ensure => installed,
       }
