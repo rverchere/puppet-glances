@@ -24,9 +24,10 @@
 #
 # Copyright (c) 2012 Remi Verchere
 #
+
 class glances {
 
-  case $operatingsystem {
+  case $::operatingsystem {
 
   'Debian', 'Ubuntu': {
       package { ['python-pip', 'build-essential', 'python-dev']:
@@ -40,7 +41,7 @@ class glances {
     }
 
   default: {
-      fail("module ${module_name} is not supported on ${operatingsystem}")
+      fail("module ${module_name} is not supported on ${::operatingsystem}")
     }
   }
 
