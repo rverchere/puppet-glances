@@ -1,5 +1,5 @@
 name    'rverchere-glances'
-version '0.0.1'
+version '0.0.2'
 
 author 'Remi Verchere <rverchere@gmail.com>'
 source 'git://github.com/rverchere/puppet-glances'
