@@ -28,19 +28,26 @@
 class glances {
 
   case $::operatingsystem {
-
-  'Debian', 'Ubuntu': {
-      package { ['python-pip', 'build-essential', 'python-dev']:
-        ensure => installed,
-      }
-      exec { 'pip-glances':
-        command => 'pip install glances',
-        creates => '/usr/local/bin/glances',
-        require => Package['python-pip'],
+    'Debian', 'Ubuntu': {
+      case $::lsbdistcodename {
+        'sid': {
+          package { 'glances':
+            ensure => installed,
+          }
+        }
+        default: {
+          package { ['python-pip', 'build-essential', 'python-dev']:
+            ensure => installed,
+          }
+          exec { 'pip-glances':
+            command => 'pip install glances',
+            creates => '/usr/local/bin/glances',
+            require => Package['python-pip'],
+          }
+        }
       }
     }
-
-  default: {
+    default: {
       fail("module ${module_name} is not supported on ${::operatingsystem}")
     }
   }
