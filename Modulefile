@@ -1,9 +1,9 @@
 name    'rverchere-glances'
-version '0.0.5'
+version '1.0.0'
 
 author 'Remi Verchere <rverchere@gmail.com>'
 source 'git://github.com/rverchere/puppet-glances'
-license 'GPLv2'
+license 'BSD 3-Clause'
 summary 'Glances Module'
 description 'Glances Module for Debian, Ubuntu, using python-pip'
 project_page 'https://github.com/rverchere/puppet-glances'
